@@ -12,7 +12,10 @@ steps:
          '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['image', 'push', '--all-tags', 'gcr.io/$PROJECT_ID/${REPO_NAME}']
+  args: ['push', 'gcr.io/$PROJECT_ID/${REPO_NAME}']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/${_ENV}']
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', '${_SERVICE_NAME}',
