@@ -1,4 +1,4 @@
-import About from './about.svelte'
+import About from '../about.svelte'
 import { render } from '@testing-library/svelte'
 
 it('works', async () => {
